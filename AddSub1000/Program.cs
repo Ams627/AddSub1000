@@ -63,6 +63,10 @@ namespace AddSub1000
                         }
                         _sums.Add((n1, n2, '-', n1 - n2));
                     }
+                    else if (n1 + n2 > 999)
+                    {
+                        continue;
+                    }
                     else
                     {
                         _sums.Add((n1, n2, '+', n1 + n2));
@@ -222,7 +226,6 @@ namespace AddSub1000
                     stream.WriteLine($"</html>");
                 }
             }
-
         }
 
         private static void Shuffle<T>(IList<T> list)
